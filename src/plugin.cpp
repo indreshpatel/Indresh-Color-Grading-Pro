@@ -188,18 +188,18 @@ obs_properties_t *color_pro_get_properties(void *data) {
     obs_properties_add_color(balance_group, SETTING_BAL_HIGHLIGHTS, "Highlight Balance");
     obs_properties_add_group(props, "color_bal", "Color Balance", OBS_GROUP_NORMAL, balance_group);
 
-    // Curves Group
+   // Curves Group
     obs_properties_t *curve_group = obs_properties_create();
     obs_properties_add_float_slider(curve_group, SETTING_CURVE_M, "Master Curve", -1.0, 1.0, 0.01);
     obs_properties_add_float_slider(curve_group, SETTING_CURVE_R, "Red Curve", -1.0, 1.0, 0.01);
     obs_properties_add_float_slider(curve_group, SETTING_CURVE_G, "Green Curve", -1.0, 1.0, 0.01);
     obs_properties_add_float_slider(curve_group, SETTING_CURVE_B, "Blue Curve", -1.0, 1.0, 0.01);
-    // clang-format off
+    
     obs_properties_add_button(curve_group, "curve_editor_btn", "Open Graphical Editor (Custom Qt)", [](obs_properties_t*, obs_property_t*, void*) -> bool {
         blog(LOG_INFO, "Open Graph Editor requested");
         return false;
     });
-    // clang-format on
+    
     obs_properties_add_group(props, "curves", "RGB Curves (Control Points)", OBS_GROUP_NORMAL, curve_group);
 
     return props;
