@@ -1,4 +1,4 @@
-// clang-format off 
+/* clang-format off */
 #include <obs-module.h>
 #include <graphics/vec4.h>
 #include <graphics/vec3.h>
@@ -188,7 +188,7 @@ obs_properties_t *color_pro_get_properties(void *data) {
     obs_properties_add_color(balance_group, SETTING_BAL_HIGHLIGHTS, "Highlight Balance");
     obs_properties_add_group(props, "color_bal", "Color Balance", OBS_GROUP_NORMAL, balance_group);
 
-   // Curves Group
+    // Curves Group
     obs_properties_t *curve_group = obs_properties_create();
     obs_properties_add_float_slider(curve_group, SETTING_CURVE_M, "Master Curve", -1.0, 1.0, 0.01);
     obs_properties_add_float_slider(curve_group, SETTING_CURVE_R, "Red Curve", -1.0, 1.0, 0.01);
@@ -221,7 +221,7 @@ struct obs_source_info color_pro_filter_info = []() {
     return info;
 }();
 
-// 7. FINAL OBS LOAD COMMANDS (No plugin-main.c needed)
+// 7. FINAL OBS LOAD COMMANDS
 OBS_DECLARE_MODULE()
 OBS_MODULE_AUTHOR("Prince Studio")
 
